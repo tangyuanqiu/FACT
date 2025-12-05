@@ -61,7 +61,7 @@ const Dashboard: React.FC<{ requests: TeamRequest[]; onViewRequest: (req: TeamRe
   
   return (
     <div className="space-y-8 animate-fade-in">
-      <section className="bg-gradient-to-br from-[#002D62] to-slate-900 rounded-3xl p-8 sm:p-12 text-white overflow-hidden relative shadow-xl">
+      <section className="bg-gradient-to-r from-[#3662e3] to-indigo-700 rounded-3xl p-8 sm:p-12 text-white overflow-hidden relative shadow-xl">
         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2"></div>
         <div className="relative z-10 max-w-2xl">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight">Unlock Your Academic Potential</h1>
