@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { TeamRequest, Competition } from '../types';
 import { X, User, BookOpen, Quote, Calendar, GraduationCap, MapPin } from 'lucide-react';
@@ -20,13 +19,13 @@ const RequestDetailModal: React.FC<Props> = ({ isOpen, onClose, request, competi
         {/* Header */}
         <div className="bg-gradient-to-r from-slate-50 to-white p-6 border-b border-slate-100 flex justify-between items-start">
             <div className="flex gap-4 items-start">
-                <div className="w-12 h-12 rounded-full bg-blue-100 text-[#002D62] flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0">
                     <User className="w-6 h-6" />
                 </div>
                 <div>
                     <div className="flex items-center gap-3 mb-1">
                         <h2 className="text-2xl font-bold text-slate-900">{request.studentName}</h2>
-                        <span className="px-2.5 py-0.5 bg-[#002D62] text-white rounded-full text-xs font-bold uppercase tracking-wide shadow-sm">
+                        <span className="px-2.5 py-0.5 bg-blue-600 text-white rounded-full text-xs font-bold uppercase tracking-wide shadow-sm">
                             {request.curriculum}
                         </span>
                     </div>
@@ -60,11 +59,11 @@ const RequestDetailModal: React.FC<Props> = ({ isOpen, onClose, request, competi
                         onClick={onClose}
                         className="flex items-center gap-4 group bg-white p-3 rounded-lg border border-blue-100 hover:border-blue-300 hover:shadow-md transition-all"
                     >
-                        <div className="w-10 h-10 rounded-lg bg-[#002D62] text-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm">
+                        <div className="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm">
                              <BookOpen className="w-5 h-5" />
                         </div>
                         <div className="flex-1">
-                             <h3 className="font-bold text-slate-900 group-hover:text-[#002D62] transition-colors">
+                             <h3 className="font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
                                 {competition.name}
                              </h3>
                              <p className="text-xs text-slate-500">{competition.category} • {competition.shortName}</p>
@@ -75,7 +74,7 @@ const RequestDetailModal: React.FC<Props> = ({ isOpen, onClose, request, competi
 
              <div>
                  <p className="text-sm font-bold text-slate-900 uppercase mb-3 flex items-center gap-2">
-                    <Quote className="w-4 h-4 text-[#002D62]" />
+                    <Quote className="w-4 h-4 text-blue-600" />
                     Academic Background (BG)
                  </p>
                  <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 text-slate-700 leading-relaxed whitespace-pre-wrap text-base shadow-inner min-h-[150px]">

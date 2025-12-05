@@ -30,7 +30,7 @@ import {
 
 const getCategoryColor = (category: Category) => {
   switch (category) {
-    case Category.MATHEMATICS: return 'bg-blue-100 text-[#002D62] border-blue-200';
+    case Category.MATHEMATICS: return 'bg-blue-100 text-blue-700 border-blue-200';
     case Category.PHYSICS: return 'bg-purple-100 text-purple-700 border-purple-200';
     case Category.CHEMISTRY: return 'bg-cyan-100 text-cyan-700 border-cyan-200';
     case Category.BIOLOGY: return 'bg-green-100 text-green-700 border-green-200';
@@ -43,7 +43,7 @@ const getCategoryColor = (category: Category) => {
 
 const getCategoryDotColor = (category: Category) => {
   switch (category) {
-    case Category.MATHEMATICS: return 'bg-[#002D62]';
+    case Category.MATHEMATICS: return 'bg-blue-500';
     case Category.PHYSICS: return 'bg-purple-500';
     case Category.CHEMISTRY: return 'bg-cyan-500';
     case Category.BIOLOGY: return 'bg-green-500';
@@ -61,14 +61,14 @@ const Dashboard: React.FC<{ requests: TeamRequest[]; onViewRequest: (req: TeamRe
   
   return (
     <div className="space-y-8 animate-fade-in">
-      <section className="bg-gradient-to-r from-[#3662e3] to-indigo-700 rounded-3xl p-8 sm:p-12 text-white overflow-hidden relative shadow-xl">
+      <section className="bg-gradient-to-br from-blue-900 to-slate-900 rounded-3xl p-8 sm:p-12 text-white overflow-hidden relative shadow-xl">
         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2"></div>
         <div className="relative z-10 max-w-2xl">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight">Unlock Your Academic Potential</h1>
           <p className="text-blue-100 text-lg mb-8 leading-relaxed">
             Discover world-class competitions, break down curriculum barriers, and build your dream team.
           </p>
-          <Link to="/competitions" className="inline-flex items-center gap-2 bg-white text-[#002D62] px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors shadow-sm">
+          <Link to="/competitions" className="inline-flex items-center gap-2 bg-white text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors shadow-sm">
             Explore Competitions <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -77,7 +77,7 @@ const Dashboard: React.FC<{ requests: TeamRequest[]; onViewRequest: (req: TeamRe
       <section>
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold text-slate-900">Upcoming Highlights</h2>
-          <Link to="/calendar" className="text-[#002D62] font-medium hover:underline">View Calendar</Link>
+          <Link to="/calendar" className="text-blue-600 font-medium hover:underline">View Calendar</Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {featured.map(c => (
@@ -87,10 +87,10 @@ const Dashboard: React.FC<{ requests: TeamRequest[]; onViewRequest: (req: TeamRe
                    <span className={`text-xs font-bold px-2 py-1 rounded uppercase ${getCategoryColor(c.category)}`}>{c.category}</span>
                    <span className="text-xs text-slate-500 font-medium">{c.monthStr}</span>
                 </div>
-                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-[#002D62] transition-colors">{c.name}</h3>
+                <h3 className="font-bold text-lg text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">{c.name}</h3>
                 <p className="text-slate-600 text-sm line-clamp-2 mb-6 flex-grow">{c.description}</p>
                 
-                <button className="w-full mt-auto py-2 bg-slate-50 text-[#002D62] font-semibold rounded-lg group-hover:bg-[#002D62] group-hover:text-white transition-colors flex items-center justify-center gap-2 text-sm">
+                <button className="w-full mt-auto py-2 bg-slate-50 text-blue-600 font-semibold rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-colors flex items-center justify-center gap-2 text-sm">
                    View Details <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -105,14 +105,14 @@ const Dashboard: React.FC<{ requests: TeamRequest[]; onViewRequest: (req: TeamRe
             <h2 className="text-2xl font-bold text-slate-900 mb-1">Recent Team Requests</h2>
             <p className="text-slate-500">Students looking for teammates across various curriculum systems.</p>
           </div>
-          <Link to="/teaming" className="text-[#002D62] font-medium hover:underline">View All Requests</Link>
+          <Link to="/teaming" className="text-blue-600 font-medium hover:underline">View All Requests</Link>
         </div>
         
         {requests.length === 0 ? (
           <div className="text-center py-12 bg-white rounded-xl border border-dashed border-slate-300">
             <Users className="w-12 h-12 text-slate-300 mx-auto mb-3" />
             <p className="text-slate-500">No active requests yet. Be the first to post!</p>
-            <Link to="/competitions" className="text-[#002D62] font-medium text-sm mt-2 inline-block">Find a competition to join</Link>
+            <Link to="/competitions" className="text-blue-600 font-medium text-sm mt-2 inline-block">Find a competition to join</Link>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -126,19 +126,19 @@ const Dashboard: React.FC<{ requests: TeamRequest[]; onViewRequest: (req: TeamRe
                  >
                     <div className="flex justify-between items-start mb-3">
                       <div>
-                        <h4 className="font-bold text-slate-900 group-hover:text-[#002D62] transition-colors text-lg">{req.studentName}</h4>
+                        <h4 className="font-bold text-slate-900 group-hover:text-blue-700 transition-colors text-lg">{req.studentName}</h4>
                         <span className="text-xs text-slate-500">{req.curriculum} • Grade {req.grade}</span>
                       </div>
                       <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-medium">Active</span>
                     </div>
                     <p className="text-xs text-slate-500 mb-2 uppercase tracking-wide font-semibold">Seeking Team For:</p>
-                    <p className="text-sm font-medium text-[#002D62] mb-4 line-clamp-1">{comp?.shortName || comp?.name}</p>
+                    <p className="text-sm font-medium text-blue-900 mb-4 line-clamp-1">{comp?.shortName || comp?.name}</p>
                     
                     <div className="bg-slate-50 p-4 rounded-lg mb-8">
                       <p className="text-sm text-slate-600 italic line-clamp-3">"{req.bio}"</p>
                     </div>
 
-                    <button className="w-full py-2 text-sm text-[#002D62] border border-blue-100 rounded-lg hover:bg-blue-50 transition-colors group-hover:bg-[#002D62] group-hover:text-white mt-auto">View Details</button>
+                    <button className="w-full py-2 text-sm text-blue-600 border border-blue-100 rounded-lg hover:bg-blue-50 transition-colors group-hover:bg-blue-600 group-hover:text-white mt-auto">View Details</button>
                  </div>
                )
              })}
@@ -192,7 +192,7 @@ const CompetitionList: React.FC<{ onTeamUp: (id: string) => void; onAddCompetiti
           <input 
             type="text" 
             placeholder="Search competitions..." 
-            className="w-full pl-10 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#002D62]"
+            className="w-full pl-10 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             value={search}
             onChange={e => setSearch(e.target.value)}
           />
@@ -207,7 +207,7 @@ const CompetitionList: React.FC<{ onTeamUp: (id: string) => void; onAddCompetiti
                 onClick={() => toggleCategory(cat)}
                 className={`px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-colors flex items-center gap-1 ${
                   isSelected 
-                  ? 'bg-[#002D62] text-white shadow-md' 
+                  ? 'bg-slate-900 text-white shadow-md' 
                   : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                 }`}
               >
@@ -222,7 +222,7 @@ const CompetitionList: React.FC<{ onTeamUp: (id: string) => void; onAddCompetiti
       <div className="flex justify-end">
           <button 
             onClick={onAddCompetition}
-            className="flex items-center gap-2 text-sm font-medium text-[#002D62] hover:text-[#001b3d] bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded-lg transition-colors border border-blue-100"
+            className="flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded-lg transition-colors border border-blue-100"
           >
             <Plus className="w-4 h-4" />
             Add Missing Competition
@@ -236,7 +236,7 @@ const CompetitionList: React.FC<{ onTeamUp: (id: string) => void; onAddCompetiti
         {filtered.length === 0 && (
           <div className="col-span-full text-center py-20 bg-white rounded-xl border border-dashed border-slate-200">
             <p className="text-slate-500 text-lg">No competitions found matching your criteria.</p>
-            <button onClick={() => {setSearch(''); setFilterCats(['All']);}} className="mt-2 text-[#002D62] hover:underline">Clear filters</button>
+            <button onClick={() => {setSearch(''); setFilterCats(['All']);}} className="mt-2 text-blue-600 hover:underline">Clear filters</button>
           </div>
         )}
       </div>
@@ -355,7 +355,7 @@ const CalendarPage: React.FC = () => {
                     <div className="flex justify-between items-start mb-1 flex-shrink-0">
                       <span className={`text-sm font-medium inline-flex items-center justify-center w-7 h-7 rounded-full ${
                         isToday
-                          ? 'bg-[#002D62] text-white shadow-sm' 
+                          ? 'bg-blue-600 text-white shadow-sm' 
                           : 'text-slate-700'
                       }`}>
                         {day}
@@ -385,7 +385,7 @@ const CalendarPage: React.FC = () => {
       <div className="w-full md:w-72 flex-shrink-0 space-y-6 hidden lg:flex flex-col h-full">
         <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex-1 overflow-hidden flex flex-col">
           <div className="flex items-center gap-2 mb-4 flex-shrink-0 pb-2 border-b border-slate-100">
-            <CalendarIcon className="w-4 h-4 text-[#002D62]" />
+            <CalendarIcon className="w-4 h-4 text-blue-600" />
             <h3 className="font-bold text-slate-900 text-sm">Flexible / Month-long</h3>
           </div>
           
@@ -396,7 +396,7 @@ const CalendarPage: React.FC = () => {
                   <div className="flex items-start gap-2">
                     <div className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${getCategoryDotColor(comp.category)}`} />
                     <div className="min-w-0">
-                      <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#002D62] leading-tight mb-1 truncate">
+                      <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-700 leading-tight mb-1 truncate">
                         {comp.name}
                       </h4>
                       <div className="flex items-center gap-2 text-xs text-slate-500 flex-wrap">
@@ -465,7 +465,7 @@ const TeamingHub: React.FC<{ requests: TeamRequest[]; onViewRequest: (req: TeamR
                     onClick={() => onViewRequest(req)}
                   >
                     <td className="p-4">
-                      <div className="font-bold text-blue-900 group-hover:text-[#002D62]">{comp?.shortName || comp?.name || 'Unknown'}</div>
+                      <div className="font-bold text-blue-900 group-hover:text-blue-700">{comp?.shortName || comp?.name || 'Unknown'}</div>
                       <div className="text-xs text-slate-500 md:hidden">{comp?.category}</div>
                     </td>
                     <td className="p-4">
@@ -479,7 +479,7 @@ const TeamingHub: React.FC<{ requests: TeamRequest[]; onViewRequest: (req: TeamR
                       <p className="truncate text-slate-600 group-hover:text-slate-900 transition-colors" title={req.bio}>{req.bio}</p>
                     </td>
                     <td className="p-4">
-                      <button className="text-[#002D62] hover:text-[#001b3d] font-medium text-xs sm:text-sm bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
+                      <button className="text-blue-600 hover:text-blue-800 font-medium text-xs sm:text-sm bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
                         <Eye className="w-3 h-3" />
                         View Full Profile
                       </button>
@@ -512,7 +512,7 @@ const SidebarItem: React.FC<{ to: string; icon: React.ElementType; label: string
     <Link 
       to={to} 
       className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors font-medium ${
-        isActive ? 'bg-[#002D62] text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+        isActive ? 'bg-blue-600 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
       }`}
     >
       <Icon className={`w-5 h-5 ${isActive ? 'text-white' : 'text-slate-500'}`} />
@@ -528,12 +528,12 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <aside className="hidden md:flex flex-col w-64 bg-white border-r border-slate-200 h-screen sticky top-0 z-20">
         <div className="p-6 border-b border-slate-100">
           <Link to="/" className="flex items-start gap-3">
-             <div className="w-10 h-10 bg-[#002D62] rounded-xl flex items-center justify-center text-white shadow-md shadow-blue-200 flex-shrink-0 mt-1">
+             <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-md shadow-blue-200 flex-shrink-0 mt-1">
                <GraduationCap className="w-6 h-6" />
              </div>
              <div className="flex flex-col">
-               <span className="font-extrabold text-2xl text-slate-900 tracking-tight leading-4">FACT</span>
-               <span className="text-[10px] font-bold text-slate-500 uppercase tracking-normal leading-4 mt-1">Farragut Academic<br/>Competition Tracker</span>
+               <span className="font-extrabold text-2xl text-slate-900 tracking-tight leading-none">FACT</span>
+               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-normal leading-4 mt-1">Farragut Academic<br/>Competition Tracker</span>
              </div>
           </Link>
         </div>
@@ -547,7 +547,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-4 rounded-xl border border-slate-200">
              <p className="text-xs font-semibold text-slate-700 mb-1">Need Guidance?</p>
              <p className="text-xs text-slate-500 mb-2">Consult with a counselor for academic planning.</p>
-             <div className="flex items-center gap-2 text-xs text-[#002D62] bg-blue-50 p-2 rounded-lg border border-blue-100 font-medium">
+             <div className="flex items-center gap-2 text-xs text-blue-800 bg-blue-50 p-2 rounded-lg border border-blue-100 font-medium">
                <MapPin className="w-3 h-3 flex-shrink-0" />
                Visit Counseling Office
              </div>
@@ -557,10 +557,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
       {/* Mobile Nav */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 z-50 flex justify-around p-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
-          <Link to="/" className="p-2 text-slate-600 hover:text-[#002D62]"><LayoutDashboard className="w-6 h-6"/></Link>
-          <Link to="/competitions" className="p-2 text-slate-600 hover:text-[#002D62]"><Search className="w-6 h-6"/></Link>
-          <Link to="/calendar" className="p-2 text-slate-600 hover:text-[#002D62]"><CalendarIcon className="w-6 h-6"/></Link>
-          <Link to="/teaming" className="p-2 text-slate-600 hover:text-[#002D62]"><Users className="w-6 h-6"/></Link>
+          <Link to="/" className="p-2 text-slate-600 hover:text-blue-600"><LayoutDashboard className="w-6 h-6"/></Link>
+          <Link to="/competitions" className="p-2 text-slate-600 hover:text-blue-600"><Search className="w-6 h-6"/></Link>
+          <Link to="/calendar" className="p-2 text-slate-600 hover:text-blue-600"><CalendarIcon className="w-6 h-6"/></Link>
+          <Link to="/teaming" className="p-2 text-slate-600 hover:text-blue-600"><Users className="w-6 h-6"/></Link>
       </div>
 
       {/* Main Content */}
@@ -568,7 +568,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         {children}
         
         <div className="mt-12 pt-6 border-t border-slate-200 text-center text-slate-400 text-sm">
-          如果对此系统有任何建议请联系 Yuqi Tian <a href="mailto:tianyuqi330@163.com" className="text-[#002D62] hover:underline">tianyuqi330@163.com</a> 交流
+          如果对此系统有任何建议请联系 Yuqi Tian <a href="mailto:tianyuqi330@163.com" className="text-blue-600 hover:underline">tianyuqi330@163.com</a> 交流
         </div>
       </main>
     </div>

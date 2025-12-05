@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Competition, TeamRequest } from '../types';
 import { X, CheckCircle } from 'lucide-react';
@@ -66,7 +65,7 @@ const TeamingModal: React.FC<Props> = ({ competition, isOpen, onClose, onSubmit 
                   <input 
                     required
                     type="text" 
-                    className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-[#002D62] focus:border-[#002D62] outline-none"
+                    className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
                     value={formData.studentName}
                     onChange={e => setFormData({...formData, studentName: e.target.value})}
                   />
@@ -77,7 +76,7 @@ const TeamingModal: React.FC<Props> = ({ competition, isOpen, onClose, onSubmit 
                     required
                     type="text" 
                     placeholder="e.g. 10"
-                    className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-[#002D62] focus:border-[#002D62] outline-none"
+                    className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
                     value={formData.grade}
                     onChange={e => setFormData({...formData, grade: e.target.value})}
                   />
@@ -87,7 +86,7 @@ const TeamingModal: React.FC<Props> = ({ competition, isOpen, onClose, onSubmit 
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">Curriculum</label>
                 <select 
-                  className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-[#002D62] focus:border-[#002D62] outline-none"
+                  className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
                   value={formData.curriculum}
                   onChange={e => setFormData({...formData, curriculum: e.target.value as any})}
                 >
@@ -104,7 +103,7 @@ const TeamingModal: React.FC<Props> = ({ competition, isOpen, onClose, onSubmit 
                   required
                   rows={4}
                   placeholder="Briefly describe your strengths (e.g., 'Gold in IMC', 'Strong in Calculus', 'Coding in Python')..."
-                  className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-[#002D62] focus:border-[#002D62] outline-none"
+                  className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
                   value={formData.bio}
                   onChange={e => setFormData({...formData, bio: e.target.value})}
                 />
@@ -114,7 +113,7 @@ const TeamingModal: React.FC<Props> = ({ competition, isOpen, onClose, onSubmit 
                 <label className="block text-sm font-medium text-slate-700 mb-1">Contact (Email/ID) <span className="text-slate-400 font-normal">(选填)</span></label>
                 <input 
                   type="text" 
-                  className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-[#002D62] focus:border-[#002D62] outline-none"
+                  className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
                   value={formData.contact}
                   onChange={e => setFormData({...formData, contact: e.target.value})}
                 />
@@ -123,7 +122,7 @@ const TeamingModal: React.FC<Props> = ({ competition, isOpen, onClose, onSubmit 
 
             <div className="p-6 border-t border-slate-100 flex justify-end gap-3">
               <button type="button" onClick={handleClose} className="px-4 py-2 text-slate-600 hover:bg-slate-100 rounded-lg text-sm font-medium">Cancel</button>
-              <button type="submit" className="px-6 py-2 bg-[#002D62] hover:bg-[#001b3d] text-white rounded-lg text-sm font-medium shadow-sm">Post Request</button>
+              <button type="submit" className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium shadow-sm">Post Request</button>
             </div>
           </form>
         ) : (
