@@ -31,7 +31,7 @@ const CompetitionCard: React.FC<Props> = ({ competition, onTeamUp }) => {
         <div className="flex justify-between items-start mb-3">
           <div>
             <span className={`inline-block px-2 py-1 rounded-md text-xs font-semibold tracking-wide uppercase mb-2 
-              ${competition.category === 'Mathematics' ? 'bg-blue-100 text-blue-700' : 
+              ${competition.category === 'Mathematics' ? 'bg-blue-100 text-[#002D62]' : 
                 competition.category === 'Physics' ? 'bg-purple-100 text-purple-700' :
                 competition.category === 'Chemistry' ? 'bg-cyan-100 text-cyan-700' :
                 competition.category === 'Biology' ? 'bg-green-100 text-green-700' :
@@ -76,7 +76,7 @@ const CompetitionCard: React.FC<Props> = ({ competition, onTeamUp }) => {
           {isTeamEvent || competition.participation?.toLowerCase().includes('team') ? (
               <button 
               onClick={handleTeamUp}
-              className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center justify-center gap-2 z-10"
+              className="flex-1 bg-[#002D62] hover:bg-[#001b3d] text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center justify-center gap-2 z-10"
             >
               <Users className="w-4 h-4" />
               Find Teammates
@@ -94,7 +94,7 @@ const CompetitionCard: React.FC<Props> = ({ competition, onTeamUp }) => {
           {competition.website && (
              <button 
               onClick={handleExternalLink}
-              className="p-2 text-slate-400 hover:text-blue-600 border border-slate-200 rounded-lg hover:border-blue-200 transition-colors z-10" 
+              className="p-2 text-slate-400 hover:text-[#002D62] border border-slate-200 rounded-lg hover:border-blue-200 transition-colors z-10" 
               title="Official Website"
              >
                 <ExternalLink className="w-4 h-4" />

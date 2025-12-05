@@ -47,8 +47,7 @@ export interface TeamRequest {
 }
 
 export interface ChatMessage {
-  role: 'user' | 'model'; // For the global AI advisor
-  sender?: 'me' | 'teammate' | 'system'; // For the teaming chat
+  role: 'user' | 'model';
   text: string;
   isError?: boolean;
 }

@@ -32,7 +32,7 @@ const CompetitionDetail: React.FC<Props> = ({ onTeamUp, requests, onViewRequest 
     return (
       <div className="p-12 text-center">
         <h2 className="text-2xl font-bold text-slate-900 mb-4">Competition Not Found</h2>
-        <Link to="/competitions" className="text-blue-600 hover:underline text-lg">Back to List</Link>
+        <Link to="/competitions" className="text-[#002D62] hover:underline text-lg">Back to List</Link>
       </div>
     );
   }
@@ -41,7 +41,7 @@ const CompetitionDetail: React.FC<Props> = ({ onTeamUp, requests, onViewRequest 
 
   const getCategoryBadgeColor = (category: Category) => {
     switch (category) {
-      case Category.MATHEMATICS: return 'bg-blue-100 text-blue-700 border-blue-200';
+      case Category.MATHEMATICS: return 'bg-blue-100 text-[#002D62] border-blue-200';
       case Category.PHYSICS: return 'bg-purple-100 text-purple-700 border-purple-200';
       case Category.CHEMISTRY: return 'bg-cyan-100 text-cyan-700 border-cyan-200';
       case Category.BIOLOGY: return 'bg-green-100 text-green-700 border-green-200';
@@ -98,7 +98,7 @@ const CompetitionDetail: React.FC<Props> = ({ onTeamUp, requests, onViewRequest 
                     href={competition.website} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl font-bold transition-all shadow-sm hover:shadow-md w-full sm:w-auto text-sm"
+                    className="inline-flex items-center justify-center gap-2 bg-[#002D62] hover:bg-[#001b3d] text-white px-6 py-2.5 rounded-xl font-bold transition-all shadow-sm hover:shadow-md w-full sm:w-auto text-sm"
                   >
                     <Globe className="w-4 h-4" />
                     Visit Official Website
@@ -120,7 +120,7 @@ const CompetitionDetail: React.FC<Props> = ({ onTeamUp, requests, onViewRequest 
       {/* Timeline (Horizontal) */}
       <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm mb-5">
         <h3 className="text-base font-bold text-slate-900 mb-6 flex items-center gap-2 border-b border-slate-100 pb-3">
-          <Clock className="w-4 h-4 text-blue-600" />
+          <Clock className="w-4 h-4 text-[#002D62]" />
           Timeline
         </h3>
         
@@ -143,7 +143,7 @@ const CompetitionDetail: React.FC<Props> = ({ onTeamUp, requests, onViewRequest 
            {/* Step 2: Exam Date (Blue Border) */}
            <div className="flex md:flex-col items-start md:items-center gap-4 text-left md:text-center relative">
              <div className="md:hidden absolute left-[9px] top-6 bottom-[-2.5rem] border-l-2 border-dashed border-slate-300"></div>
-             <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-white border-2 border-blue-600 shadow-sm shadow-blue-100 flex-shrink-0 mt-1 md:mt-0 z-10 relative"></div>
+             <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-white border-2 border-[#002D62] shadow-sm shadow-blue-100 flex-shrink-0 mt-1 md:mt-0 z-10 relative"></div>
              <div>
                 <p className="text-xs font-bold uppercase text-slate-400 tracking-wide mb-1">Competition Date</p>
                 <p className="text-slate-900 font-bold text-lg">
@@ -155,7 +155,7 @@ const CompetitionDetail: React.FC<Props> = ({ onTeamUp, requests, onViewRequest 
 
            {/* Step 3: Results (Solid Blue) */}
            <div className="flex md:flex-col items-start md:items-center gap-4 text-left md:text-center relative">
-             <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-blue-600 flex-shrink-0 mt-1 md:mt-0 z-10 shadow-md shadow-blue-200 relative"></div>
+             <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-[#002D62] flex-shrink-0 mt-1 md:mt-0 z-10 shadow-md shadow-blue-200 relative"></div>
              <div>
                 <p className="text-xs font-bold uppercase text-slate-400 tracking-wide mb-1">Results</p>
                 <p className="text-slate-900 font-semibold text-base">
@@ -171,7 +171,7 @@ const CompetitionDetail: React.FC<Props> = ({ onTeamUp, requests, onViewRequest 
         {/* Exam Details - 60% width (3/5 columns) */}
         <div className="md:col-span-3 bg-white rounded-2xl p-6 border border-slate-200 shadow-sm h-full">
              <h3 className="text-base font-bold text-slate-900 flex items-center gap-2 mb-4 border-b border-slate-100 pb-3">
-               <BookOpen className="w-4 h-4 text-blue-600" />
+               <BookOpen className="w-4 h-4 text-[#002D62]" />
                Exam Details
              </h3>
              {/* Stacked vertically */}
@@ -234,9 +234,9 @@ const CompetitionDetail: React.FC<Props> = ({ onTeamUp, requests, onViewRequest 
                      <div className="w-8 h-8 rounded-md bg-white text-green-600 border border-slate-200 flex items-center justify-center flex-shrink-0">
                         <FileText className="w-4 h-4" />
                      </div>
-                     <span className="font-medium text-sm text-slate-900 group-hover:text-blue-700 truncate">{item.title}</span>
+                     <span className="font-medium text-sm text-slate-900 group-hover:text-[#002D62] truncate">{item.title}</span>
                    </div>
-                   <Download className="w-4 h-4 text-slate-400 group-hover:text-blue-600 ml-2" />
+                   <Download className="w-4 h-4 text-slate-400 group-hover:text-[#002D62] ml-2" />
                  </a>
                ))}
             </div>
@@ -253,7 +253,7 @@ const CompetitionDetail: React.FC<Props> = ({ onTeamUp, requests, onViewRequest 
         <div className="flex justify-between items-center mb-4">
             <h2 className="text-xl font-bold text-slate-900">Active Team Requests</h2>
             {relatedRequests.length > 0 && (
-                <button onClick={() => onTeamUp(competition.id)} className="text-blue-600 font-medium hover:underline text-sm">
+                <button onClick={() => onTeamUp(competition.id)} className="text-[#002D62] font-medium hover:underline text-sm">
                     Post Request
                 </button>
             )}
@@ -269,7 +269,7 @@ const CompetitionDetail: React.FC<Props> = ({ onTeamUp, requests, onViewRequest 
                     >
                         <div className="flex justify-between items-start mb-2">
                             <div>
-                                <h4 className="font-bold text-slate-900 text-base group-hover:text-blue-700 transition-colors">{req.studentName}</h4>
+                                <h4 className="font-bold text-slate-900 text-base group-hover:text-[#002D62] transition-colors">{req.studentName}</h4>
                                 <div className="flex items-center gap-2 mt-1">
                                     <span className="text-xs font-semibold bg-slate-100 text-slate-600 px-2 py-0.5 rounded">{req.curriculum}</span>
                                     <span className="text-xs text-slate-500">Grade {req.grade}</span>
@@ -280,7 +280,7 @@ const CompetitionDetail: React.FC<Props> = ({ onTeamUp, requests, onViewRequest 
                         <div className="bg-slate-50 p-3 rounded-lg mb-3">
                              <p className="text-sm text-slate-600 italic line-clamp-2">"{req.bio}"</p>
                         </div>
-                        <button className="w-full py-1.5 text-xs font-medium text-blue-600 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors flex items-center justify-center gap-1">
+                        <button className="w-full py-1.5 text-xs font-medium text-[#002D62] bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors flex items-center justify-center gap-1">
                             <Eye className="w-3 h-3" />
                             View Full Profile
                         </button>

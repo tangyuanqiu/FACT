@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Category } from '../types';
 import { X, CheckCircle, Plus, Link as LinkIcon } from 'lucide-react';
@@ -39,7 +40,7 @@ const AddCompetitionModal: React.FC<Props> = ({ isOpen, onClose }) => {
           <form onSubmit={handleSubmit}>
             <div className="p-6 border-b border-slate-100 flex justify-between items-center">
               <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-                <Plus className="w-5 h-5 text-blue-600" />
+                <Plus className="w-5 h-5 text-[#002D62]" />
                 Request New Competition
               </h2>
               <button type="button" onClick={handleClose} className="text-slate-400 hover:text-slate-600">
@@ -57,7 +58,7 @@ const AddCompetitionModal: React.FC<Props> = ({ isOpen, onClose }) => {
                 <input 
                   required
                   type="text" 
-                  className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                  className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-[#002D62] focus:border-[#002D62] outline-none"
                   value={formData.name}
                   onChange={e => setFormData({...formData, name: e.target.value})}
                   placeholder="e.g., International Physics Challenge"
@@ -68,7 +69,7 @@ const AddCompetitionModal: React.FC<Props> = ({ isOpen, onClose }) => {
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-1">Category</label>
                   <select 
-                    className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                    className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-[#002D62] focus:border-[#002D62] outline-none"
                     value={formData.category}
                     onChange={e => setFormData({...formData, category: e.target.value})}
                   >
@@ -81,7 +82,7 @@ const AddCompetitionModal: React.FC<Props> = ({ isOpen, onClose }) => {
                   <label className="block text-sm font-medium text-slate-700 mb-1">Approx. Date</label>
                   <input 
                     type="text" 
-                    className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                    className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-[#002D62] focus:border-[#002D62] outline-none"
                     value={formData.date}
                     onChange={e => setFormData({...formData, date: e.target.value})}
                     placeholder="e.g., Late October"
@@ -95,7 +96,7 @@ const AddCompetitionModal: React.FC<Props> = ({ isOpen, onClose }) => {
                     <LinkIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                     <input 
                     type="url" 
-                    className="w-full pl-9 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                    className="w-full pl-9 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-[#002D62] focus:border-[#002D62] outline-none"
                     value={formData.website}
                     onChange={e => setFormData({...formData, website: e.target.value})}
                     placeholder="https://..."
@@ -107,7 +108,7 @@ const AddCompetitionModal: React.FC<Props> = ({ isOpen, onClose }) => {
                 <label className="block text-sm font-medium text-slate-700 mb-1">Description / Notes <span className="text-slate-400 font-normal">(选填)</span></label>
                 <textarea 
                   rows={3}
-                  className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                  className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-[#002D62] focus:border-[#002D62] outline-none"
                   value={formData.description}
                   onChange={e => setFormData({...formData, description: e.target.value})}
                   placeholder="Any additional details..."
@@ -117,7 +118,7 @@ const AddCompetitionModal: React.FC<Props> = ({ isOpen, onClose }) => {
 
             <div className="p-6 border-t border-slate-100 flex justify-end gap-3">
               <button type="button" onClick={handleClose} className="px-4 py-2 text-slate-600 hover:bg-slate-100 rounded-lg text-sm font-medium">Cancel</button>
-              <button type="submit" className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium shadow-sm">Submit Request</button>
+              <button type="submit" className="px-6 py-2 bg-[#002D62] hover:bg-[#001b3d] text-white rounded-lg text-sm font-medium shadow-sm">Submit Request</button>
             </div>
           </form>
         ) : (
