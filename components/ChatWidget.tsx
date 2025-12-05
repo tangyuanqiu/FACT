@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Sparkles } from 'lucide-react';
 import { createChatSession, sendMessage } from '../services/geminiService';
@@ -47,7 +48,7 @@ const ChatWidget: React.FC = () => {
       {isOpen && (
         <div className="bg-white rounded-2xl shadow-2xl w-80 sm:w-96 mb-4 border border-slate-200 overflow-hidden flex flex-col animate-fade-in-up transition-all duration-300 h-[500px]">
           {/* Header */}
-          <div className="bg-gradient-to-r from-indigo-600 to-blue-600 p-4 flex justify-between items-center">
+          <div className="bg-[#002D62] p-4 flex justify-between items-center">
             <div className="flex items-center gap-2 text-white">
               <Sparkles className="w-5 h-5" />
               <span className="font-semibold">FACT Advisor</span>
@@ -63,7 +64,7 @@ const ChatWidget: React.FC = () => {
               <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm ${
                   msg.role === 'user' 
-                    ? 'bg-blue-600 text-white rounded-tr-none' 
+                    ? 'bg-[#002D62] text-white rounded-tr-none' 
                     : 'bg-white text-slate-700 border border-slate-200 shadow-sm rounded-tl-none'
                 }`}>
                   {msg.text}
@@ -89,7 +90,7 @@ const ChatWidget: React.FC = () => {
             <div className="flex gap-2">
               <input
                 type="text"
-                className="flex-1 bg-slate-100 border-0 rounded-full px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
+                className="flex-1 bg-slate-100 border-0 rounded-full px-4 py-2 text-sm focus:ring-2 focus:ring-[#002D62] outline-none"
                 placeholder="Ask about competitions..."
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
@@ -98,7 +99,7 @@ const ChatWidget: React.FC = () => {
               <button 
                 onClick={handleSend}
                 disabled={isLoading || !input.trim()}
-                className="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 text-white p-2 rounded-full transition-colors"
+                className="bg-[#002D62] hover:bg-[#002D62]/90 disabled:bg-slate-300 text-white p-2 rounded-full transition-colors"
               >
                 <Send className="w-4 h-4" />
               </button>
@@ -109,7 +110,7 @@ const ChatWidget: React.FC = () => {
 
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className={`${isOpen ? 'bg-slate-800 opacity-100' : 'bg-blue-600 hover:bg-blue-700 opacity-75 hover:opacity-100'} text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-2`}
+        className={`${isOpen ? 'bg-slate-800 opacity-100' : 'bg-[#002D62] hover:bg-[#002D62]/90 opacity-75 hover:opacity-100'} text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-2`}
       >
         {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
         {!isOpen && <span className="font-medium pr-2">AI Assistant</span>}
